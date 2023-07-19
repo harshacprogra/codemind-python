@@ -1,12 +1,11 @@
-s=input()
-v="aeiou"
-m=[]
-for i in range(0,len(s)):
-    for j in range(i,len(s)):
-        c=0
-        for k in s[i:j+1]:
-            if k in v:
-                c+=1
-        if c==len(s[i:j+1]):
-            m.append(c)
-print(max(m))
+string = list(input())
+vowels = ['a', 'e', 'i', 'o', 'u']
+count = 0
+ans = 0
+for i in range(len(string)):
+    if string[i] in vowels:
+        count += 1
+        ans = max(ans, count)
+    else:
+        count = 0
+print(ans)
